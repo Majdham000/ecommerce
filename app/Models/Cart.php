@@ -11,8 +11,6 @@ class Cart extends Model
 
     public $timestamps = false;
 
-    protected $guard = ['id'];
-
     public function user()
     {
         return $this -> belongsTo(User::class,'user_id');
@@ -27,5 +25,5 @@ class Cart extends Model
     {
         return $this -> hasOne(Payment::class,'cart_id');
     }
-    
+
 }

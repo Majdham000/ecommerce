@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->integer('price');
             $table->string('image_path');
+            $table->enum('gender', ['male','female']);
             $table->integer('sale')->default(0);
             $table->text('description');
             $table->timestamp('published_at');

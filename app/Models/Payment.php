@@ -11,8 +11,6 @@ class Payment extends Model
 
     public $timestamps = false;
 
-    protected $guard = ['id','date'];
-
     public function cart()
     {
         return $this -> belongsTo(Cart::class,'cart_id');

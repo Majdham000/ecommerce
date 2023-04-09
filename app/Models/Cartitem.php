@@ -11,8 +11,6 @@ class Cartitem extends Model
 
     public $timestamps = false ;
 
-    protected $guard = ['id'];
-
     public function promodel()
     {
         return $this -> belongsTo(Promodel::class,'promodel_id');

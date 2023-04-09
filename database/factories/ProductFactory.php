@@ -23,6 +23,7 @@ class ProductFactory extends Factory
             'brand_id' => fake()->numberBetween(1,3),
             'name' => fake()->name(),
             'price' => fake()->numberBetween(100,200),
+            'gender' => fake()->randomElement(['male','female']),
             'image_path' => 'default.png',
             'sale' => fake()->numberBetween(0,70),
             'description' => fake()->text()

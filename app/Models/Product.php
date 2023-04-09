@@ -11,8 +11,6 @@ class Product extends Model
 
     public $timestamps = false;
 
-    protected $guard = ['id','published_at'];
-
     public function category()
     {
         return $this -> belongsTo(Category::class,'category_id');

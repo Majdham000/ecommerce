@@ -4,6 +4,12 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Brand;
+use App\Models\Category;
+use App\Models\Payment;
+use App\Models\Review;
+use App\Models\Cart;
+use App\Models\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,25 +18,21 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Brand::factory()->create(['name'=>'adidas']);
-        \App\Models\Brand::factory()->create(['name'=>'puma']);
-        \App\Models\Brand::factory()->create(['name'=>'nike']);
 
-        \App\Models\Category::factory()->create(['name'=>'shirt']);
-        \App\Models\Category::factory()->create(['name'=>'jacket']);
-        \App\Models\Category::factory()->create(['name'=>'shoes']);
+        Brand::factory()->create(['name'=>'adidas']);
+        Brand::factory()->create(['name'=>'puma']);
+        Brand::factory()->create(['name'=>'nike']);
 
-        \App\Models\Review::factory(5)->create();
+        Category::factory()->create(['name'=>'shirt']);
+        Category::factory()->create(['name'=>'jacket']);
+        Category::factory()->create(['name'=>'shoes']);
 
-        \App\Models\Payment::factory(5)->create();
+        Cart::factory(10)->create();
 
-        \App\Models\Cart::factory(10)->create();
+        Review::factory(5)->create();
 
-        // \App\Models\User::factory(10)->create();
+        Payment::factory(5)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+
     }
 }

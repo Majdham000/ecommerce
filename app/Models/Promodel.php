@@ -11,8 +11,6 @@ class Promodel extends Model
 
     public $timestamps = false;
 
-    protected $guard = ['id'];
-
     public function product()
     {
         return $this -> belongsTo(Product::class,'product_id');
