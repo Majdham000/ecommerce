@@ -11,7 +11,7 @@ class Product extends Model
 
     public $timestamps = false;
 
-    protected $guard = ['id','published_at'];
+    protected $guarded = ['id','published_at'];
 
     public function category()
     {

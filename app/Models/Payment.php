@@ -11,7 +11,7 @@ class Payment extends Model
 
     public $timestamps = false;
 
-    protected $guard = ['id','date'];
+    protected $guarded = ['id','date'];
 
     public function cart()
     {
