@@ -11,7 +11,7 @@ class Review extends Model
 
     public $timestamps = false;
 
-    protected $guard = ['id'];
+    protected $guarded = ['id'];
 
     public function user()
     {
@@ -22,5 +22,5 @@ class Review extends Model
     {
         return $this -> belongsTo(Product::class,'product_id');
     }
-    
+
 }

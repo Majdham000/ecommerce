@@ -20,11 +20,13 @@ class DatabaseSeeder extends Seeder
         \App\Models\Category::factory()->create(['name'=>'jacket']);
         \App\Models\Category::factory()->create(['name'=>'shoes']);
 
+        \App\Models\Cart::factory(10)->create();
+
         \App\Models\Review::factory(5)->create();
 
         \App\Models\Payment::factory(5)->create();
 
-        \App\Models\Cart::factory(10)->create();
+
 
         // \App\Models\User::factory(10)->create();
 

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Cart extends Model
 {
@@ -11,7 +12,7 @@ class Cart extends Model
 
     public $timestamps = false;
 
-    protected $guard = ['id'];
+    protected $guarded = ['id'];
 
     public function user()
     {
@@ -27,5 +28,5 @@ class Cart extends Model
     {
         return $this -> hasOne(Payment::class,'cart_id');
     }
-    
+
 }

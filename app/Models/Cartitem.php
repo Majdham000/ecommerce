@@ -11,7 +11,7 @@ class Cartitem extends Model
 
     public $timestamps = false ;
 
-    protected $guard = ['id'];
+    protected $guarded = ['id'];
 
     public function promodel()
     {

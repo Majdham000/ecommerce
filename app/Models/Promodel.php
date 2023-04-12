@@ -11,7 +11,7 @@ class Promodel extends Model
 
     public $timestamps = false;
 
-    protected $guard = ['id'];
+    protected $guarded = ['id'];
 
     public function product()
     {
