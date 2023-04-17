@@ -11,6 +11,11 @@ class Product extends Model
 
     public $timestamps = false;
 
+<<<<<<< HEAD
+=======
+    protected $guarded = ['id','published_at'];
+
+>>>>>>> 9c6c85518e707c064e4232a952ac9a024ac11b5f
     public function category()
     {
         return $this -> belongsTo(Category::class,'category_id');
