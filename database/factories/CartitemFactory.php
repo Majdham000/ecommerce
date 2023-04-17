@@ -2,13 +2,13 @@
 
 namespace Database\Factories;
 
-use App\Models\Promodel;
+use App\Models\Variation;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Cartitem>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\CartItem>
  */
-class CartitemFactory extends Factory
+class CartItemFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,9 +18,9 @@ class CartitemFactory extends Factory
     public function definition(): array
     {
         return [
-            'promodel_id' => Promodel::factory()->create()->id,
+            'variation_id' => Variation::factory()->create()->id,
+            'cart_id' => fake()->numberBetween(1, 10),
             'quantity' => fake()->numberBetween(1,3),
-            'status' => fake()->boolean(),
             'total_price' => fake()->randomNumber()
         ];
     }

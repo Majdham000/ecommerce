@@ -5,20 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Review extends Model
+class Variation extends Model
 {
     use HasFactory;
 
     public $timestamps = false;
 
-    public function user()
+    public function cartitems()
     {
-        return $this -> belongsTo(User::class,'user_id');
+        return $this -> hasMany(Cartitem::class, 'variation_id');
     }
 
     public function product()
     {
         return $this -> belongsTo(Product::class,'product_id');
     }
-
 }

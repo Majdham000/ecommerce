@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Capsule\Manager;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,13 +10,32 @@ class Product extends Model
 {
     use HasFactory;
 
-    public $timestamps = false;
+    protected $with = ['variations'];
 
-<<<<<<< HEAD
-=======
-    protected $guarded = ['id','published_at'];
+    public function scopeFilter($query, array $filters) : void
+    {
+        $query->when($filters['gender'] ?? false, fn($query, $gender)=>
+            $query->where('gender', $gender)
+        );
 
->>>>>>> 9c6c85518e707c064e4232a952ac9a024ac11b5f
+        $query->when($filters['category'] ?? false, fn($query, $category)=>
+            $query->where('category_id', $category)
+        );
+
+        $query->when($filters['size'] ?? false, fn($query, $size)=>
+            $query->whereHas('variations', fn($query)=>
+                $query->where('size',$size)
+            )
+        );
+
+        $query->when($filters['color'] ?? false, fn($query, $color)=>
+            $query->whereHas('variations', fn($query)=>
+                $query->where('color',$color))
+        );
+
+    }
+
+
     public function category()
     {
         return $this -> belongsTo(Category::class,'category_id');
@@ -29,6 +49,10 @@ class Product extends Model
     public function reviews()
     {
         return $this -> hasMany(Review::class,'product_id');
+    }
+
+    public function variations(){
+        return $this -> hasMany(Variation::class, 'product_id');
     }
 
 }

@@ -1,11 +1,7 @@
 <?php
 
-<<<<<<< HEAD
-use App\Http\Controllers\CartController;
-=======
-use App\Http\Controllers\AuthController;
->>>>>>> 9c6c85518e707c064e4232a952ac9a024ac11b5f
-use Illuminate\Http\Request;
+use App\Http\Controllers\Api\ProductController;
+use App\Http\Controllers\Api\AuthController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -19,10 +15,5 @@ Route::controller(AuthController::class)->group(function(){
     Route::get('profile','profile')->middleware('auth:api');
 });
 
-<<<<<<< HEAD
-Route::get('/cart', [CartController::class, 'index']);
-Route::post('/cart', [CartController::class, 'store']);
-Route::delete('/cart', [CartController::class, 'destroy']);
-=======
-
->>>>>>> 9c6c85518e707c064e4232a952ac9a024ac11b5f
+Route::get('products', [ProductController::class, 'index']);
+Route::get('products/{product}', [ProductController::class, 'show']);

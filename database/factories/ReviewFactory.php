@@ -20,7 +20,7 @@ class ReviewFactory extends Factory
             'user_id' => fake()->numberBetween(1,10),
             'product_id' => fake()->numberBetween(1,10),
             'rating' => fake()->numberBetween(0,5),
-            'comment' => fake()->text()
+            'comment' => fake()->sentence()
         ];
     }
 }

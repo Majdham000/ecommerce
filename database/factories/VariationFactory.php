@@ -2,12 +2,13 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Product;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Promodel>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Variation>
  */
-class PromodelFactory extends Factory
+class VariationFactory extends Factory
 {
     /**
      * Define the model's default state.
