@@ -19,13 +19,14 @@ class ProductFactory extends Factory
     public function definition(): array
     {
         return [
-            'category_id' => fake()->numberBetween(1,3),
+            'category_id' => Category::factory(),
             'brand_id' => fake()->numberBetween(1,3),
             'name' => fake()->name(),
             'price' => fake()->numberBetween(100,200),
             'image_path' => 'default.png',
             'sale' => fake()->numberBetween(0,70),
-            'description' => fake()->text()
+            'description' => fake()->text(),
+            'gender' => fake()->randomElement(['male','female']),
         ];
     }
 }

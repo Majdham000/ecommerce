@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('promodels', function (Blueprint $table) {
+        Schema::create('variations', function (Blueprint $table) {
             $table->id();
             $table->foreignId('product_id')->constrained('products');
             $table->enum('size',['s','m','l','xl']);
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('promodels');
+        Schema::dropIfExists('variations');
     }
 };

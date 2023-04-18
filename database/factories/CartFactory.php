@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Cartitem;
+use App\Models\CartItem;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\User;
 /**
@@ -18,9 +18,8 @@ class CartFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => User::factory()->create()->id,
-            'cart_item_id' => Cartitem::factory()->create()->id,
-            'status' => fake()->boolean(),
+            'user_id' => User::factory(),
+            'is_paid' => fake()->boolean(),
             'total_price' => fake()->randomNumber()
         ];
     }

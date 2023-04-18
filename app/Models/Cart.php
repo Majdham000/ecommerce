@@ -12,16 +12,14 @@ class Cart extends Model
 
     public $timestamps = false;
 
-    protected $guarded = ['id'];
-
-    public function user()
+    public function customer()
     {
         return $this -> belongsTo(User::class,'user_id');
     }
 
-    public function cartitem()
+    public function items()
     {
-        return $this -> belongsTo(Cartitem::class,'cart_item_id');
+        return $this -> hasMany(CartItem::class,'cart_id');
     }
 
     public function payment()

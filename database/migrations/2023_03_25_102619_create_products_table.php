@@ -17,9 +17,10 @@ return new class extends Migration
             $table->foreignId('brand_id')->constrained('brands');
             $table->string('name');
             $table->integer('price');
+            $table->enum('gender', ['male','female']);
+            $table->text('description');
             $table->string('image_path');
             $table->integer('sale')->default(0);
-            $table->text('description');
             $table->timestamp('published_at');
         });
     }
