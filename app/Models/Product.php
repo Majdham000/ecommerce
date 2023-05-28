@@ -12,6 +12,8 @@ class Product extends Model
 
     protected $with = ['variations'];
 
+    public $timestamps = false ;
+
     public function scopeFilter($query, array $filters) : void
     {
         $query->when($filters['gender'] ?? false, fn($query, $gender)=>
