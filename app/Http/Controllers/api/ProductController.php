@@ -12,7 +12,7 @@ class ProductController extends Controller
     public function index(Request $request)
     {
 
-        return Product::filter([$request])->paginate($request->per_page);
+        return Product::filter($request->all())->paginate($request->per_page);
     }
 
     public function show(Product $product)
